@@ -22,3 +22,35 @@ Plus, developers can **earn from day one** using the **fee-sharing mechanism** a
 ## Get Started
 
 [How to get started with Universal Bridge](https://portal.thirdweb.com/connect/pay/get-started)
+
+## See Universal Bridge in Action
+Want to see how Universal Bridge works? Check it out under the hood
+
+```jsx
+import { createThirdwebClient } from "thirdweb";
+import { PayEmbed } from "thirdweb/react";
+
+import { createWallet } from "thirdweb/wallets";
+import { base } from "thirdweb/chains";
+
+const client = createThirdwebClient({
+  clientId: "....",
+});
+
+function Example() {
+  return (
+    <PayEmbed
+      client={client}
+      payOptions={{
+        mode: "fund_wallet",
+        prefillBuy: {
+          chain: base,
+          amount: "0.01",
+        },
+      }}
+    />
+  );
+}
+
+```
+[**See how the Buy Crypto flow works in the playground**](https://playground.thirdweb.com/connect/pay)
